@@ -6,8 +6,6 @@ const search = document.querySelector('input')
 const msg1 = document.querySelector('#msg-1')
 const msg2 = document.querySelector('#msg-2')
 
-// msg1.textContent = 'Fron java'
-
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -18,7 +16,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     msg1.textContent = 'loading response'
 
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
 
             if (data.error) {
